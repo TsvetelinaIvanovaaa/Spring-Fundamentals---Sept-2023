@@ -20,7 +20,7 @@
 <!--                <li class="nav-item col-md-4">-->
 <!--                    <span th:text="${@loggedUser.username}"></span>-->
 <!--                </li>-->
-                <th:block th:if="${@loggedUser.getId() == null}">
+                <th:block th:if="${@loggedUser.getUsername() == null}">
                 <li class="nav-item col-md-4">
                     <a class="nav-link active h5 my-text-color" th:href="@{/login}">Login</a>
                 </li>
@@ -29,9 +29,9 @@
                     <a class="nav-link my-text-color active h5 " th:href="@{/register}">Register</a>
                 </li>
                 </th:block>
-                <th:block th:unless="${@loggedUser.getId() == null}">
+                <th:block th:unless="${@loggedUser.getUsername() == null}">
                     <a class="nav-link h5 my-text-color"
-                       th:text="|Welcome,  ${@loggedUser.username}|"></a>
+                       th:text="|Welcome,  ${@loggedUser.getUsername()}|"></a>
                 <li class="nav-item col-md-4">
                     <a class="nav-link my-text-color active h5 " href="/logout">Logout</a>
                 </li>

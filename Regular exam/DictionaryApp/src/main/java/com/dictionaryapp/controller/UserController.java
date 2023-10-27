@@ -3,6 +3,7 @@ package com.dictionaryapp.controller;
 import com.dictionaryapp.model.dto.user.UserLoginBindingModel;
 import com.dictionaryapp.model.dto.user.UserRegisterBindingModel;
 import com.dictionaryapp.service.UserService;
+import com.dictionaryapp.service.impl.LoggedUser;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,9 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 
     private final UserService userService;
+    private final LoggedUser loggedUser;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, LoggedUser loggedUser) {
         this.userService = userService;
+        this.loggedUser = loggedUser;
     }
 
     @GetMapping("/login")
@@ -64,6 +67,10 @@ public class UserController {
 
     @PostMapping("/logout")
     public ModelAndView logout() {
+        if (!loggedUser.isLogged()) {
+            return new ModelAndView("redirect:/home");
+        }
+
         this.userService.logout();
         return new ModelAndView("redirect:/");
     }

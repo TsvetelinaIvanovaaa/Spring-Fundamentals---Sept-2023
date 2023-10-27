@@ -31,6 +31,14 @@ public class LoggedUser {
         this.username = username;
     }
 
+    public boolean isLogged() {
+        return isLogged;
+    }
+
+    public void setLogged(boolean logged) {
+        isLogged = logged;
+    }
+
     public void login (String username) {
         this.username = username;
         this.isLogged = true;
