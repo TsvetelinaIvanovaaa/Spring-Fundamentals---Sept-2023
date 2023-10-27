@@ -1,4 +1,4 @@
-package com.dictionaryapp.model;
+package com.dictionaryapp.model.enums;
 
 public enum LanguageNameEnum {
     GERMAN ("A West Germanic language, is spoken by over 90 million people worldwide. Known for its complex grammar and compound words, it's the official language of Germany and widely used in Europe."),

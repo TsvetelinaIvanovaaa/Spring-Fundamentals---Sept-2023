@@ -1,6 +1,6 @@
 package com.dictionaryapp.init;
 
-import com.dictionaryapp.model.LanguageNameEnum;
+import com.dictionaryapp.model.enums.LanguageNameEnum;
 import com.dictionaryapp.model.entity.Language;
 import com.dictionaryapp.repo.LanguageRepository;
 import org.springframework.boot.CommandLineRunner;

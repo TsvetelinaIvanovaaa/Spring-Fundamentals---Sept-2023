@@ -1,6 +1,6 @@
 package com.dictionaryapp.model.entity;
 
-import com.dictionaryapp.model.LanguageNameEnum;
+import com.dictionaryapp.model.enums.LanguageNameEnum;
 import jakarta.persistence.*;
 
 @Entity
