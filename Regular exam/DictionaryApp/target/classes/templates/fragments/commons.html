@@ -29,7 +29,7 @@
                     <a class="nav-link my-text-color active h5 " th:href="@{/register}">Register</a>
                 </li>
                 </th:block>
-                <th:block th:unless="${@loggedUser.getId() == null}">
+                <th:block th:unless="${@loggedUser.login('username')}">
                     <a class="nav-link h5 my-text-color"
                        th:text="|Welcome,  ${@loggedUser.username}|"></a>
                 <li class="nav-item col-md-4">

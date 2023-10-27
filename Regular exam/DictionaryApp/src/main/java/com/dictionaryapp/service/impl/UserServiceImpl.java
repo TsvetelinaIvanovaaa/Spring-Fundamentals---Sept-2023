@@ -51,4 +51,9 @@ public class UserServiceImpl implements UserService {
         }
         return false;
     }
+
+    @Override
+    public void logout() {
+        this.loggedUser.logout();
+    }
 }
