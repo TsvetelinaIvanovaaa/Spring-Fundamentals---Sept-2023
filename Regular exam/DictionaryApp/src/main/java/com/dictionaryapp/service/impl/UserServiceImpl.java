@@ -27,10 +27,12 @@ public class UserServiceImpl implements UserService {
         if (!userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())){
             return false;
         }
-        User dbUser = userRepository.findByUsername(userRegisterBindingModel.getUsername());
-        if (dbUser != null) {
+        boolean existsByUsernameOrEmail = userRepository.existsByUsernameOrEmail(userRegisterBindingModel.getUsername(), userRegisterBindingModel.getEmail());
+
+        if (existsByUsernameOrEmail) {
             return false;
         }
+
         User user = new User();
         user.setUsername(userRegisterBindingModel.getUsername());
         user.setEmail(userRegisterBindingModel.getEmail());

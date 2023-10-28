@@ -33,7 +33,9 @@
                     <a class="nav-link h5 my-text-color"
                        th:text="|Welcome,  ${@loggedUser.getUsername()}|"></a>
                 <li class="nav-item col-md-4">
-                    <a class="nav-link my-text-color active h5 " href="/logout">Logout</a>
+                    <form th:action="@{/logout}" th:method="POST">
+                        <button type="submit" class="btn-link nav-link my-text-color active h5 logout">Logout</button>
+                    </form>
                 </li>
                 </th:block>
             </ul>

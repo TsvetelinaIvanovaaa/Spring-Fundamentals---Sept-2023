@@ -11,4 +11,9 @@ public class WordController {
     public ModelAndView add() {
         return new ModelAndView("word-add");
     }
+
+    @GetMapping("/words/add")
+    public ModelAndView add() {
+        return new ModelAndView("word-add");
+    }
 }
