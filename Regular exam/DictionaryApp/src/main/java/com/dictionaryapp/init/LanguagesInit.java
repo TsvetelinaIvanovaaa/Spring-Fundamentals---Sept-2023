@@ -36,5 +36,8 @@ public class LanguagesInit implements CommandLineRunner {
 
         }
     }
+//    public Language findByLanguageNameEnum(LanguageNameEnum language) {
+//        return languageRepository.findByName(language).orElse(null);
+//    }
 
 }
