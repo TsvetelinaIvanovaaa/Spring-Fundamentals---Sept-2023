@@ -20,18 +20,22 @@
         </button>
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
             <ul class="navbar-nav row">
-                <li class="nav-item col-md-4">
-                    <a class="nav-link text-white active h5" href="/">Login</a>
-                </li>
-                <li class="nav-item col-md-4">
-                    <a class="nav-link text-white active h5" href="/">Register</a>
-                </li>
-<!--                <li class="nav-item col-md-4">-->
-<!--                    <a class="nav-link text-white active h5" href="/">Add Product</a>-->
-<!--                </li>-->
-                <li class="nav-item col-md-4">
-                    <a class="nav-link text-white active h5" href="/">Logout</a>
-                </li>
+                <th:block th:if="${@loggedUser.id == null}">
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-white active h5" th:href="@{/login}">Login</a>
+                    </li>
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-white active h5" th:href="@{/register}">Register</a>
+                    </li>
+                </th:block>
+                <th:block th:if="${@loggedUser.id == null}">
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-white active h5" th:href="@{/products/add}">Add Product</a>
+                    </li>
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-white active h5" th:href="@{/users/logout}">Logout</a>
+                    </li>
+                </th:block>
             </ul>
         </div>
     </nav>

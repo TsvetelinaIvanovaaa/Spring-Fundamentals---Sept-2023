@@ -8,7 +8,10 @@
 <main>
     <h1 class="text-center mt-2"><span class="badge badge-pill badge-dark">Login</span></h1>
     <hr class="hr-3 w-25 bg-white"/>
-    <form class="mx-auto w-25 bg-blur" action="/" method="">    
+    <form class="mx-auto w-25 bg-blur"
+          th:action="@{/login}"
+          th:method="POST"
+    th:object="${userLoginBindingModel}">
         <small class="text-danger">Error message</small>
         <br/>  
         <small class="text-danger">Incorrect username or password!</small>
