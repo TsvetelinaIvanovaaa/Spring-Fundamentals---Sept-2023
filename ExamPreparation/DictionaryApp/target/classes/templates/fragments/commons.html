@@ -17,18 +17,22 @@
 
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
             <ul class="navbar-nav row">
+                <th:block th:if="${@loggedUser.id == null}">
                 <li class="nav-item col-md-4">
-                    <a class="nav-link active h5 my-text-color" href="/">Login</a>
+                    <a class="nav-link active h5 my-text-color" href="/users/login">Login</a>
                 </li>
 
                 <li class="nav-item col-md-4">
-                    <a class="nav-link my-text-color active h5 " href="/">Register</a>
+                    <a class="nav-link my-text-color active h5 " href="/users/register">Register</a>
                 </li>
-
-                    <a class="nav-link h5 my-text-color">Welcome, {username}</a>
+                </th:block>
+                <th:block th:unless="${@loggedUser.id == null}">
+                    <a class="nav-link h5 my-text-color"
+                    th:text="|Welcome, ${@loggedUser.username}|"></a>
                 <li class="nav-item col-md-4">
-                    <a class="nav-link my-text-color active h5 " href="/">Logout</a>
+                    <a class="nav-link my-text-color active h5 " href="/users/logout">Logout</a>
                 </li>
+                </th:block>
             </ul>
         </div>
     </nav>
