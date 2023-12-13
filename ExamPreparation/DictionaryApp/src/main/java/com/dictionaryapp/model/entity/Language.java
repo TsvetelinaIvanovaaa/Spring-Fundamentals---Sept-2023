@@ -13,6 +13,7 @@ public class Language extends BaseEntity{
 
     @Column(nullable = false)
     private String description;
+    private LanguageNameEnum name;
 
     public Language() {
     }
@@ -31,5 +32,9 @@ public class Language extends BaseEntity{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setName(LanguageNameEnum name) {
+        this.name = name;
     }
 }

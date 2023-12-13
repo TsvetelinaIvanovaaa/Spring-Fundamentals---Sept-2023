@@ -13,8 +13,9 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-nav rounded " >
         <a class="nav-link my-text-color active h5 " href="/">Dictionary App</a>
-        <a class="nav-link my-text-color active h5  " href="/">Add Word</a>
-
+        <th:block th:if="${@loggedUser.id != null}">
+        <a class="nav-link my-text-color active h5  " href="/words/add">Add Word</a>
+        </th:block>
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
             <ul class="navbar-nav row">
                 <th:block th:if="${@loggedUser.id == null}">

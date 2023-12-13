@@ -1,37 +1,34 @@
-package com.dictionaryapp.model.entity;
+package com.dictionaryapp.model.dto.word;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import org.hibernate.validator.constraints.Length;
+import com.dictionaryapp.model.entity.Language;
+import com.dictionaryapp.model.entity.User;
 
 import java.time.LocalDate;
-@Entity
-@Table(name = "words")
-public class Word extends BaseEntity {
 
-    @Length(min = 2, max = 40)
-    @Column(nullable = false)
+public class WordViewDto {
+    private Long id;
+
     private String term;
 
-    @Length(min = 2, max = 80)
-    //@Column(nullable = false)
     private String translation;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
     private String example;
 
-    @Column(nullable = false)
-    private LocalDate inputDate;
-
-    @ManyToOne
     private Language language;
 
-    @ManyToOne
+    private LocalDate inputDate;
+
     private User addedBy;
 
-    public Word() {
+    public WordViewDto() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTerm() {
@@ -66,19 +63,19 @@ public class Word extends BaseEntity {
         this.inputDate = inputDate;
     }
 
-    public Language getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(Language language) {
-        this.language = language;
-    }
-
     public User getAddedBy() {
         return addedBy;
     }
 
     public void setAddedBy(User addedBy) {
         this.addedBy = addedBy;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
     }
 }

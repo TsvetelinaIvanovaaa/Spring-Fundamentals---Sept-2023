@@ -4,6 +4,7 @@ import com.dictionaryapp.model.dto.user.UserLoginBindingModel;
 import com.dictionaryapp.model.dto.user.UserRegisterBindingModel;
 import com.dictionaryapp.model.service.UserServiceModel;
 import com.dictionaryapp.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -82,5 +83,11 @@ public class UserController {
         }
         userService.registerUser(modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
         return "redirect:/users/login";
+    }
+    @GetMapping("/logout")
+    public String logout(HttpSession httpSession) {
+        httpSession.invalidate();
+
+        return "redirect:/";
     }
 }
