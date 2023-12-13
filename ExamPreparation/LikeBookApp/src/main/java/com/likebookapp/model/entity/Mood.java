@@ -1,6 +1,6 @@
 package com.likebookapp.model.entity;
 
-import com.likebookapp.model.enums.MoodName;
+import com.likebookapp.model.enums.MoodNameEnum;
 
 import javax.persistence.*;
 
@@ -10,19 +10,19 @@ public class Mood extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     @Column(unique = true, nullable = false)
-    private MoodName moodName;
+    private MoodNameEnum moodName;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String description;
 
     public Mood() {
     }
 
-    public MoodName getMoodName() {
+    public MoodNameEnum getMoodName() {
         return moodName;
     }
 
-    public void setMoodName(MoodName moodName) {
+    public void setMoodName(MoodNameEnum moodName) {
         this.moodName = moodName;
     }
 
