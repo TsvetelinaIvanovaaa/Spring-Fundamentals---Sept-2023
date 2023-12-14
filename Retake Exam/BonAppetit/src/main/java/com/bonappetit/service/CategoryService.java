@@ -28,4 +28,8 @@ public class CategoryService {
                     this.categoryRepository.save(category);
                 });
     }
+
+    public Category findByCategoryNameEnum(CategoryNameEnum categoryName) {
+        return categoryRepository.findByCategoryName(categoryName).orElse(null);
+    }
 }
