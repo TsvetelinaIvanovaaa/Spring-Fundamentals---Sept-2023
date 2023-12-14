@@ -21,8 +21,8 @@ public class User extends BaseEntity{
     @Email
     @Column(unique = true, nullable = false)
     private String email;
-    @ManyToOne
-    private Post post;
+//    @ManyToOne
+//    private Post post;
 
     public User() {
     }
@@ -51,11 +51,11 @@ public class User extends BaseEntity{
         this.email = email;
     }
 
-    public Post getPost() {
-        return post;
-    }
-
-    public void setPost(Post post) {
-        this.post = post;
-    }
+//    public Post getPost() {
+//        return post;
+//    }
+//
+//    public void setPost(Post post) {
+//        this.post = post;
+//    }
 }
